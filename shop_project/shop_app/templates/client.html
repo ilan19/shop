@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load staticfiles %}
+    <title></title>
+</head>
+<body>
+<h1>{{ client.first_name }}</h1>
+<h1>{{ client.last_name }}</h1>
+<h1>{{ client.email }}</h1>
+<img src="http://{{ request.get_host}}/{{ client.profil_picture }}">
+{% for product in products %}
+<h2>{{ product.name}}</h2>
+{% endfor %}
+
+
+</body>
+</html>
