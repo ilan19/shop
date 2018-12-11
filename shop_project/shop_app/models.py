@@ -6,11 +6,11 @@ class Product(models.Model):
   description = models.TextField()
   image = models.ImageField(default='static/images/image.png', upload_to='static/images/')
 
-  def __str__(self):
-    return self.description
+  # def __str__(self):
+  #   return self.description
 
-  def __repr__(self):
-    return "<Product {}>".format(self.name)
+  # def __repr__(self):
+  #   return "<Product {}>".format(self.name)
 
 class Client(models.Model):
 	first_name = models.CharField(max_length=264)
