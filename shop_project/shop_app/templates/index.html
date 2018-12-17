@@ -1,18 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Home Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Home Page</title>
 </head>
 <body>
-
-  <h1>Product List</h1>
-
-  {% for product in products %}
-    <h3>{{ product.name }} - ${{ product.price }}</h3>
-    <p>{{ product.description }}</p>
-    <a href="{% url 'shop_app:product' product.id %}">click here</a>
-    <hr>
-  {% endfor %}
+    <nav class="navbar navbar-light bg-secondary">
+        <a class="navbar-brand text-light" href="/index">
+            <i class="fab fa-spotify"></i>Sababa
+        </a>
+      <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-light my-2 my-sm-0 text-light" type="submit">Search</button>
+      </form>
+  </nav>
+    <div class="container">
+          <div class="row">
+            <div class="col-6 offset-md-3">
+                <h1>Product List</h1>
+                <a href="{% url 'shop_app:clients' %}">Liste des Clients</a>
+                {% for product in products %}
+                <ul class="list-group">
+                     <li class="list-group-item disabled">{{ product.name }}</li>
+                     <li class="list-group-item">${{ product.price }}</li>
+                     <li class="list-group-item">{{ product.description }}</li>
+                     <li class="list-group-item">
+                         <a href="{% url 'shop_app:product' product.id %}">Details</a>
+                     </li>
+                </ul>
+                
+                <hr>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

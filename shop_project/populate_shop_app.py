@@ -34,7 +34,7 @@ def generate_products():
 
  
 def populate():
-	#create_clients()
+	create_clients()
 	generate_products()
 
 if __name__ == '__main__':
